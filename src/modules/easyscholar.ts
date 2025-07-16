@@ -48,31 +48,31 @@ const field2Info: any = {
     return { rank, key, value }
   },
   sciBase(s: string) {
-    let key = "SCI基础版", value = s;
+    let key = "SCI Basic Edition", value = s;
     s = s.substring(s.length - 2);
     let rank
-    if (s == "1区") {
+    if (s == "Zone 1") {
       rank = 1
-    } else if (s == "2区") {
+    } else if (s == "Zone 2") {
       rank = 2
-    } else if (s == "3区") {
+    } else if (s == "Zone 3") {
       rank = 3
-    } else if (s == "4区") {
+    } else if (s == "Zone 4") {
       rank = 4
     }
     return { rank, key, value }
   },
   sciUp(s: string) {
-    let key = "SCI升级版", value = s;
+    let key = "SCI Upgraded Edition", value = s;
     s = s.substring(s.length - 2);
     let rank
-    if (s == "1区") {
+    if (s == "Zone 1") {
       rank = 1
-    } else if (s == "2区") {
+    } else if (s == "Zone 2") {
       rank = 2
-    } else if (s == "3区") {
+    } else if (s == "Zone 3") {
       rank = 3
-    } else if (s == "4区") {
+    } else if (s == "Zone 4") {
       rank = 4
     }
     return {rank, key, value}
@@ -94,7 +94,7 @@ const field2Info: any = {
     return {rank, key, value}
   },
   eii(s: string) {
-    let key = "EI检索", value = "";
+    let key = "EI Indexed", value = "";
     let rank = 2
     return { rank, key, value: ""}
   },
@@ -103,7 +103,7 @@ const field2Info: any = {
     let rank
     if (s == "CSSCI") {
       rank = 1
-    } else if (s == "CSSCI扩展版") {
+    } else if (s == "CSSCI Extended") {
       rank = 2
     }
     return {rank, key, value}
@@ -111,7 +111,7 @@ const field2Info: any = {
   nju(s: string) {
     let key = "NJU", value = s;
     let rank
-    if (s == "超一流期刊" || s == "学科群一流期刊") {
+    if (s == "Super First-Class Journals" || s == "Discipline Group First-Class Journals") {
       rank = 1
     } else if (s == "A") {
       rank = 2
@@ -121,22 +121,22 @@ const field2Info: any = {
     return {rank, key, value}
   },
   pku(s: string) {
-    let key = "北大中文核心", value = ""
+    let key = "PKU Chinese Core", value = ""
     let rank = 1
     return { rank, key, value }
   },
   xju(s: string) {
     let key = "XJU", value = s;
     let rank
-    if (s == "一区") {
+    if (s == "Zone 1") {
       rank = 1
-    } else if (s == "二区") {
+    } else if (s == "Zone 2") {
       rank = 2
-    } else if (s == "三区") {
+    } else if (s == "Zone 3") {
       rank = 3
-    } else if (s == "四区") {
+    } else if (s == "Zone 4") {
       rank = 4
-    } else if (s == "五区") {
+    } else if (s == "Zone 5") {
       rank = 5
     } 
     return {rank, key, value}
@@ -185,9 +185,9 @@ const field2Info: any = {
     let key = "CQU"
     let value = s
     let rank
-    if (s == "A" || s == "权威期刊") {
+    if (s == "A" || s == "Authoritative Journals") {
       rank = 2
-    } else if (s == "B" || s == "重要期刊") {
+    } else if (s == "B" || s == "Important Journals") {
       rank = 3
     } else if (s == "C") {
       rank = 4
@@ -197,9 +197,9 @@ const field2Info: any = {
   cscd(s: string) {
     let key = "CSCD", value = s;
     let rank
-    if (s == "扩展库") {
+    if (s == "Extended Database") {
       rank = 3
-    } else if (s == "核心库") {
+    } else if (s == "Core Database") {
       rank = 2
     }
     return { rank, key, value }
@@ -247,11 +247,11 @@ const field2Info: any = {
   hhu(s: string) {
     let key = "HHU", value = s;
     let rank
-    if (s == "A类") {
+    if (s == "Class A") {
       rank = 1
-    } else if (s == "B类") {
+    } else if (s == "Class B") {
       rank = 2
-    } else if (s == "c类") {
+    } else if (s == "Class C") {
       rank = 3
     }
     return { rank, key, value }
@@ -288,7 +288,7 @@ const field2Info: any = {
   sdufe(s: string) {
     let key = "SDUFE", value = s;
     let rank
-    if (s == "特类期刊") {
+    if (s == "Special Class Journals") {
       rank = 1
     } else if (s == "A1") {
       rank = 2
@@ -355,16 +355,16 @@ const field2Info: any = {
   xdu(s: string) {
     let key = "XDU", value = s;
     let rank
-    if (s == "1类贡献度") {
+    if (s == "First Class Contribution") {
       rank = 1
-    } else if (s == "2类贡献度") {
+    } else if (s == "Second Class Contribution") {
       rank = 2
     }
     return { rank, key, value }
   },
   zhongguokejihexin(s: string) {
     let key, value, rank
-    if (s == "中国科技核心期刊") {
+    if (s == "Chinese Science and Technology Core Journals") {
       rank = 1
       key = s
       value = ""
@@ -409,17 +409,17 @@ const field2Info: any = {
     return { rank, key, value }
   },
   zju(s: string) {
-    if (s == "国内一级学术期刊") {
-      s = "国内一级";
-    } else if (s == "国内核心期刊") {
-      s = "国内核心";
+    if (s == "Domestic First-Class Academic Journals") {
+      s = "Domestic First-Class";
+    } else if (s == "Domestic Core Journals") {
+      s = "Domestic Core";
     }
     let key = "ZJU", value = s
     let rank
 
-    if (s == "国内一级") {
+    if (s == "Domestic First-Class") {
       rank = 1
-    } else if (s == "国内核心") {
+    } else if (s == "Domestic Core") {
       rank = 2
     }
     return { rank, key, value }
@@ -457,15 +457,15 @@ const field2Info: any = {
   },
   CPU(s: string) {
     let key = "CPU", value = s, rank
-    if (s == "一流") {
+    if (s == "First-Class") {
       rank = 1
-    } else if (s == "权威") {
+    } else if (s == "Authoritative") {
       rank = 2
-    } else if (s == "学科顶尖") {
+    } else if (s == "Discipline Leading") {
       rank = 3
-    } else if (s == "学科一流") {
+    } else if (s == "Discipline First-Class") {
       rank = 4
-    } else if (s == "学科重要") {
+    } else if (s == "Discipline Important") {
       rank = 5
     }
     return { rank, key, value }

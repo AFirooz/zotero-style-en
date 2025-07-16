@@ -2,9 +2,9 @@ import { config } from "../../package.json";
 var ColorRNA = require('color-rna');
 
 /**
- * 用于创建高于Zotero本身的标签UI
- * Zotero本身的tagSelector只是本类的其中一个视图
- * TODO 右键标签：重命名，复制完整标签，复制此层级标签，删除标签
+ * Used to create a tag UI higher than Zotero itself
+ * Zotero's own tagSelector is just one view of this class
+ * TODO Right-click tag: rename, copy full tag, copy this level tag, delete tag
  */
 export class Tags {
   private props = {
@@ -35,18 +35,18 @@ export class Tags {
   private plainTags: string[] = [];
   public nestedTags!: NestedTags["children"];
   /**
-   * 这是Zotero界面存在的Container，用于存放标签
+   * This is the Container that exists in the Zotero interface for storing tags
    */
   private container!: HTMLDivElement;
   private annotationsID = "zotero-item-pane-message-box"
   private nestedTagsID = "nested-tags-container"
   /**
-   * 这是本类创建的可折叠标签视图的container，是所有元素的起点
-   * 相对应Zotero视图的节点叫tagSelector，但不需要储存
+   * This is the collapsible tag view container created by this class, which is the starting point for all elements
+   * The corresponding Zotero view node is called tagSelector, but does not need to be stored
    */
   public nestedTagsContainer!: HTMLDivElement;
   /**
-   * 用于记录层级标签的选择状态和折叠状态，使得刷新时候保持
+   * Used to record the selection and collapse state of hierarchical tags, so that they are maintained during refresh
    */
   public state: { [id: string]: { collapse?: boolean; select?: boolean } } = {};
   public collectionItems: Zotero.Item[] | undefined;
@@ -61,7 +61,7 @@ export class Tags {
   }
 
   /**
-   * 用于执行只需要执行一次的逻辑
+   * Used to execute logic that only needs to be executed once
    */
   private prepare() {
     const c = new ColorRNA(this.props.color.select)
@@ -179,7 +179,7 @@ export class Tags {
       isMouseDown = false
     })
     /**
-     * 把tags过滤is修改成contains模式
+     * Modify tags filtering from "is" to "contains" mode
      * https://github.com/zotero/zotero/blob/2f0d41c0cb9ea47cce03ea51bf8ac718dbe44b15/chrome/content/zotero/xpcom/collectionTreeRow.js#L321
      */
     // @ts-ignore
@@ -298,27 +298,27 @@ export class Tags {
   }
 
   /**
-   * 确保container已初始化
-   * @param force 不经任何条件判断
+   * Ensure container is initialized
+   * @param force Don't make any conditional judgments
    * @returns 
    */
   public async init(force: boolean = false) {
     this.container ??= document.querySelector("#zotero-tag-selector") as HTMLDivElement;
-    // 获取标签，可能是文库所有也可能是当前分类
+    // Get tags, may be all from library or current category
     let plainTags = await this.getPlainTags()
-    // 若不是强制刷新，则需要判断是否和上次获取plainTags相同
+    // If not forced refresh, need to check if it's the same as the last plainTags obtained
     if (!force) {
       this.tagsIns = []
       if (
-        // 与上次状态相同
+        // Same as last state
         (
           JSON.stringify(plainTags) == JSON.stringify(this.plainTags)
           // this._state == JSON.stringify(this.state)
         ) ||
-        // 未处于当前视图
+        // Not in current view
         this.nestedTagsContainer?.style.display == "none"
       ) {
-        // 更新状态
+        // Update state
         // await ZoteroPane.itemsView._itemTreeLoadingDeferred.promise
         // @ts-ignore
         this.nestedTagsContainer.querySelectorAll(".item")!.forEach(e => e.update())
@@ -326,11 +326,11 @@ export class Tags {
       }
     }
     this.plainTags = plainTags
-    // 隐藏Zotero标签视图，它将继续作为一种非嵌套视图存在，并由插件安排
+    // Hide Zotero tag view, it will continue to exist as a non-nested view and be arranged by the plugin
     this.container.childNodes.forEach((e: any) => e.style.display = "none");
-    // 以一种嵌套的数据结构分析存储plainTags
+    // Analyze and store plainTags in a nested data structure
     this.nestedTags = await this.getNestedTags()
-    // 渲染嵌套标签
+    // Render nested tags
     await this.refresh()
     // this._state = JSON.stringify(this.state)
     // defered.resolve()

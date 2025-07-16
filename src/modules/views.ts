@@ -2084,7 +2084,7 @@ export default class Views {
     }
     ztoolkit.Prompt.register([
       {
-        name: "高能进度条",
+        name: "High-Energy Progress Bar",
         label: "Style",
         when: () => {
           // 有条目，且条目有阅读时间
@@ -2095,7 +2095,7 @@ export default class Views {
           return Zotero.Prefs.get(`${config.addonRef}.function.titleColumn.enable`) as boolean && record?.data && Object.keys(record.data).length > 0 
         },
         /**
-         * 进度条UI，重置
+         * Progress bar UI, reset
          */
         callback: (prompt) => {
           const container = prompt.createCommandsContainer()
@@ -2103,7 +2103,7 @@ export default class Views {
           prompt.inputNode.placeholder = item.getField("title")
           const record = this.storage.get(item, "readingTime")
           if (!record || !record.data || Object.keys(record.data).length == 0) {
-            prompt.showTip("这里一片荒芜~")
+            prompt.showTip("Nothing here~")
             return
           }
           const box = ztoolkit.UI.createElement(document, "div", {
@@ -2182,15 +2182,15 @@ export default class Views {
         }
       },
       {
-        name: "迁移旧版数据",
+        name: "Migrate Old Data",
         label: "Style",
         when: () => {
           let items = ZoteroPane.getSelectedItems()
           return items.length == 1 && items[0].getField("title") == "ZoteroStyle"
         },
         callback: async (prompt) => {
-          // 迁移数据逻辑
-          const tipNode = prompt.showTip("感谢您长时间对Style的支持，数据正在迁移中，请耐心等待！")
+          // Data migration logic
+          const tipNode = prompt.showTip("Thank you for your long-term support of Style. Data is being migrated, please wait patiently!")
           tipNode.style.position = "relative"
           let progress = ztoolkit.UI.createElement(
             document,
@@ -2211,14 +2211,14 @@ export default class Views {
           tipNode.appendChild(progress)
 
           progress.style.width = "0%"
-          // 迁移逻辑
+          // Migration logic
           let ids = ZoteroPane.getSelectedItems()[0].getNotes()
           let totalTime = 0
           for (let i = 0; i < ids.length; i++) {
             let noteItem = Zotero.Items.get(ids[i])
             try {
               let data = JSON.parse((noteItem.note.replace(/<.+?>/g, "").replace(/[^\n\{]+/, "")))
-              // 没有itemKey，搜索本地
+              // No itemKey, search locally
               if (!data.itemKey) {
                 let s = new Zotero.Search();
                 s.addCondition("title", "contains", data.title);
@@ -2230,7 +2230,7 @@ export default class Views {
                 page: data.pageNum,
                 data: data.pageTime,
               }
-              // 写入笔记逻辑
+              // Note writing logic
               if (data.itemKey) {
                 this.storage.set(
                   Zotero.Items.getByLibraryAndKey(1, data.itemKey),
@@ -2247,14 +2247,14 @@ export default class Views {
           // @ts-ignore
           prompt.exit()
           prompt.showTip(
-            `数据迁移完成!\n\n` +
-            `从安装Style开始，它与您共同阅读了${ids.length}篇文献，总用时${(totalTime / 60 / 60).toFixed(2)}小时。\n\n` +
-            `你走过的路，每一步都算数。`
+            `Data migration completed!\n\n` +
+            `Since installing Style, it has read ${ids.length} papers with you, totaling ${(totalTime / 60 / 60).toFixed(2)} hours.\n\n` +
+            `Every step you take counts.`
           )
         }
       },
       {
-        name: "标签",
+        name: "Tags",
         label: "Style",
         when: () => {
           let item = getItem() as _ZoteroItem
@@ -2267,9 +2267,9 @@ export default class Views {
         },
         callback: (prompt) => {
           const libraryID = 1
-          // 重命名标签
+          // Rename tag
           // Zotero.Tags.rename(libraryID, oldName, newName);
-          // 指派颜色位置
+          // Assign color position
           // Zotero.Tags.setColor()
 
           const container = prompt.createCommandsContainer()
@@ -2405,9 +2405,9 @@ export default class Views {
       },
       {
         /**
-         * 实现标注颜色组，可以新创建新组，组内可以新建新的标注颜色
+         * Implement annotation color groups, can create new groups, new annotation colors can be created within groups
          */
-        name: "标注",
+        name: "Annotations",
         label: "Style",
         when: () => {
           return Zotero.Prefs.get(`${config.addonRef}.function.annotationColors.enable`) as boolean
@@ -2835,7 +2835,7 @@ export default class Views {
         }
       },
       {
-        name: "期刊标签",
+        name: "Journal Tags",
         label: "Style",
         callback: (prompt) => {
           let secretKey = Zotero.Prefs.get(`${config.addonRef}.easyscholar.secretKey`) as string
@@ -2889,8 +2889,8 @@ export default class Views {
                   {
                     type: "click",
                     listener: () => {
-                      new ztoolkit.ProgressWindow("提示", { closeOtherProgressWindows: true, closeTime: 3000 })
-                        .createLine({ text: "已为您在浏览器打开申请密钥教程，请参考配置", type:"default" })
+                      new ztoolkit.ProgressWindow("Tip", { closeOtherProgressWindows: true, closeTime: 3000 })
+                        .createLine({ text: "Opened API key application tutorial in browser, please refer to configuration", type:"default" })
                         .show()
                       Zotero.launchURL("https://github.com/MuiseDestiny/zotero-style/releases/tag/2.5.1")
                       Zotero.launchURL("http://xhslink.com/d5E72o")
@@ -2960,7 +2960,7 @@ export default class Views {
         },
       },
       {
-        name: "设置为插件储存条目",
+        name: "Set as plugin storage item",
         when: () => {
           let item = getItem()
           return item?.getField("title").includes("Addon") as boolean
@@ -2971,7 +2971,7 @@ export default class Views {
           if ("item" in this.storage) {
             this.storage.item = item
           }
-          prompt.showTip(`设置成功，该条目下有${item.getNotes().length}条记录。`)
+          prompt.showTip(`Setup successful, this item has ${item.getNotes().length} records.`)
         }
       }
     ])

@@ -43,7 +43,7 @@ pref("extensions.zotero.__addonRef__.PublicationTagsColumn.rankColors", '#EE0000
 pref("extensions.zotero.__addonRef__.PublicationTagsColumn.defaultColor", "#86dad1");
 pref("extensions.zotero.__addonRef__.PublicationTagsColumn.textColor", 'black');
 pref("extensions.zotero.__addonRef__.PublicationTagsColumn.sortBy", 'sci, -sciif');
-pref("extensions.zotero.__addonRef__.PublicationTagsColumn.map", "北大中文核心=北核, SCIIF=IF, SCIIF(5)=IF(5)");
+pref("extensions.zotero.__addonRef__.PublicationTagsColumn.map", "PKU Chinese Core=PKU Core, SCIIF=IF, SCIIF(5)=IF(5)");
 
 pref("extensions.zotero.__addonRef__.PublicationTagsColumn.margin", "0.2");
 pref("extensions.zotero.__addonRef__.PublicationTagsColumn.padding", "0.5");
