@@ -1564,7 +1564,7 @@ export default class Views {
             }
             colViewItem.addEventListener("click", (event) => {
               if (event.button == 2) {
-                // 鼠标右键删除
+                // Right-click mouse to delete
                 columnsViews = columnsViews.filter(e => {
                   return !isSame(e.dataKeys, columnsView.dataKeys)
                 })
@@ -1582,7 +1582,7 @@ export default class Views {
             let pressTimer: number | undefined
             colViewItem.addEventListener("mousedown", (event) => {
               pressTimer = window.setTimeout(() => {
-                // 重新编辑columnsView
+                // Re-edit columnsView
                 columnsViews = columnsViews.filter(e => {
                   return !isSame(e.dataKeys, columnsView.dataKeys)
                 })
@@ -2557,7 +2557,7 @@ export default class Views {
                           type: "mousedown",
                           listener: async (event: any) => {
                             if (event.button == 0) {
-                              // 长按进入编辑，短按使用
+                              // Long press to enter edit mode, short press to use
                               timer = window.setTimeout(() => {
                                 timer = undefined
                                 editAnnotations(group)
@@ -2574,7 +2574,7 @@ export default class Views {
                           listener: async (event: any) => {
                             if (event.button == 0) {
                               if (timer) {
-                                // 长按事件未达到，执行选中
+                                // Long press event not reached, execute selection
                                 window.clearTimeout(timer as number)
                                 saveAnnotations(group[1])
 
@@ -2662,8 +2662,8 @@ export default class Views {
           updateGroups()
 
           /**
-           * 编辑长按选中的标注颜色
-           * 可以删除，但最少要保留两个颜色，只剩下两个颜色删除是无效的
+           * Edit the annotation colors selected by long press
+           * Can be deleted, but at least two colors must be retained, deletion is invalid when only two colors remain
            * @param annotationColors 
            */
           let editAnnotations = (group: Group) => {

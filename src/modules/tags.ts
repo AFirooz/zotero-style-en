@@ -164,7 +164,7 @@ export class Tags {
     });
     document.documentElement.appendChild(styles);
 
-    // 左侧边到条目面板中间的splitter
+    // Splitter from left sidebar to item panel
     const splitter = document.querySelector("#zotero-collections-splitter")
     let isMouseDown = false
     splitter?.addEventListener("mousedown", () => {
@@ -515,7 +515,7 @@ export class Tags {
         alignItems: "center"
       }
     }, this.container) as HTMLDivElement
-    // 左侧边到条目面板中间的splitter
+    // Splitter from left sidebar to item panel
     const box = ztoolkit.UI.appendElement({
       tag: "div",
       classList: ["nested-tags-box"],
@@ -646,7 +646,7 @@ export class Tags {
       ]
     }, this.nestedTagsContainer) as HTMLDivElement;
 
-    // 这是Zotero原本标签视图的父节点，在Zotero中这么命名
+    // This is the parent node of Zotero's original tag view, named this way in Zotero
     const tagSelector = this.container.querySelector(".tag-selector")! as HTMLDivElement
     this.updateTagsIn()
     this.render(box, this.nestedTags, 0)
@@ -930,8 +930,8 @@ export class Tags {
   }
 
   /**
-   * 用于渲染一个父节点下的一个层级的标签
-   * nestedTags本身可看作一个children
+   * Used to render tags at one level under a given parent node
+   * nestedTags itself can be viewed as a children
    * @param parent 
    * @param children 
    * @param margin 
