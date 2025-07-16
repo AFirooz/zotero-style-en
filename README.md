@@ -1,5 +1,5 @@
 # Ethereal Style
-> 让你享受阅读文献的乐趣！
+> Enjoy the pleasure of reading literature!
 
 <img src="addon/chrome/content/icons/favicon.png" width="36px" height="36px">
 
@@ -16,12 +16,12 @@ You can upload your screenshots [here](https://github.com/MuiseDestiny/zotero-st
 
 
 
-[中文文档](https://www.notion.so/Zotero-Style-bc2aebbbb6df4b7baa858e376e4fc5be) |
-[视频教程](https://www.bilibili.com/video/BV1ZP411p7ko/?spm_id_from=333.999.0.0)
+[English Documentation](https://www.notion.so/Zotero-Style-bc2aebbbb6df4b7baa858e376e4fc5be) |
+[Video Tutorial](https://www.bilibili.com/video/BV1ZP411p7ko/?spm_id_from=333.999.0.0)
 ---
-## 关于更新/About Update
+## About Updates
 
-> 请使用下图，Zotero官方提供的更新方式更新。小版本将不在Github发布Release，你始终可以通过下图方式获取所有版本（大/小）更新。
+> Please use the official Zotero update method shown in the image below to update. Minor versions will not be released on Github, but you can always get all version updates (major/minor) through the method shown below.
 
 
 ![image](https://github.com/user-attachments/assets/87a6737c-4789-4195-a46e-d4b8bbb20b79)
@@ -30,8 +30,8 @@ You can upload your screenshots [here](https://github.com/MuiseDestiny/zotero-st
 
 ## TODO
 
-- [ ] 视图组、颜色设置等参与同步
-- [ ] 主题切换
+- [ ] View groups, color settings, etc. participate in synchronization
+- [ ] Theme switching
 
 ## Columns
 
@@ -104,43 +104,43 @@ You can upload your screenshots [here](https://github.com/MuiseDestiny/zotero-st
 
 | Field | Name | Source |
 | --- | --- | --- |
-|ccf|  |《中国计算机学会推荐国际学术会议和期刊、中文科技期刊目录-2019、计算领域高质量科技期刊分级目录》，数据集从高到低分为：A(T1), B(T2), C(T3)。|
-|swufe| |《西南财经大学学术期刊目录2018》，数据集从高到低分为：A+, A, B, C。|
-|cufe| |《中央财经大学期刊目录（2019版）》，数据集从高到低分为：AAA, AA, A。|
-|ssci| |《JCR-分区-影响因子-2022(2022.6.28).pdf》，数据集从高到低分为：Q1, Q2, Q3, Q4。|
-|sci| |《JCR-分区-影响因子-2022(2022.6.28).pdf》，数据集从高到低分为：Q1, Q2, Q3, Q4。|
-|sciif| |《JCR-分区-影响因子-2022(2022.6.28).pdf》，easyScholar将影响因子从10, 4, 2, 1, 0分为5个等级。|
-|jci| |《JCR-分区-影响因子-2022(2022.6.28).pdf》，easyScholar将JCI指数从3, 1, 0.5, 0 分为4个等级。|
-|sciif5| |由于还未收集到最新5年影响因子数据，所以仍沿用2021年的数据。easyScholar将5年影响因子从10, 4, 2, 1, 0分为5个等级。|
-|ahci| |《JCR-分区-影响因子-2022(2022.6.28).pdf》。该数据集只有一个等级。|
-|fdu| |《复旦大学学位与研究生教育国内期刊指导目录（2018年1月修订）》，数据集从高到低分为：A, B。|
-|sjtu| |《上海交通大学SCISCIE论文A档B档期刊分类目录及其他刊物等级参考(2018.5)》，数据集从高到低分为：A, B。|
-|xmu| |《厦门大学人文社科核心学术期刊目录（2017）》，该数据集只有一个等级：一类。|
-|cssci| |《CSSCI来源期刊、扩展版目录2021-2022》。数据集从高到低分为：CSSCI， CSSCI扩展版。|
-|ruc| |《中国人民大学核心期刊目录2017》，数据集从高到低分为：A+, A, A-, B。|
-|cscd| |《中国科学引文数据库来源期刊列表（2021-2022 年度）》，数据集从高到低分为： 核心库，扩展库。|
-|swjtu| |《西南交通大学学术期刊分级目录（2017年修订版）》，数据集从高到低分为：A++, A+, A, B+, B。|
-|uibe| |《对外经济贸易大学科研奖励外文核心期刊专题分类目录》,数据集从高到低分为： A, A-, B。|
-|pku| |《中文核心期刊要目总览》（2020年版）》，该数据集只有一个等级。|
-|xdu| |《关于发布《西安电子科技大学高水平期刊目录（2021年）》的通知》，数据集从高到低分为： 一类贡献度，二类贡献度。|
-|sdufe| |《山东财经大学学术期刊分类目录》，数据集从高到低分为： 特类期刊, A1, A2, B, C。|
-|eii| EI检索 |《CPXSourceList062022.xlsx》，该数据集只有一个等级。|
-|nju| |《南京大学超一流、学科群一流、SCI A区和B区期刊目录.xlsx》，数据集从高到低分为： 超一流期刊（学科群一流期刊）, A, B。|
-|zhongguokejihexin| 中国科技核心期刊目录 |《2021年版中国科技核心期刊目录.pdf》, 该数据集只有一个等级。|
-|cqu| |《重庆大学人文社会科学类、自然科学类期刊分级目录》，数据集从高到低分为：A（权威期刊）， B（重要期刊）， C。|
-|hhu| |《河海大学高质量论文期刊及学术会议目录（自然科学类，不含计算机科学与技术、软件工程学科）》，数据集从高到低分为：A类，B类，C类。|
-|ajg| |《ABS-2021.pdf》英文约1700种。数据集从高到低分为：4*, 4, 3, 2, 1 |
-|xju| |《新疆大学2020版自然科学、人文社科学术期刊目录，2021年人文社科学术期刊调整目录》。数据集从高到低分为：一区， 二区， 三区，四区， 五区。|
-|cug| |《中国地质大学科技类、人文社科类期刊分区总汇》。数据集从高到低分为：T1, T2, T3, T4, T5。|
-|fms| | FMS管理科学高质量期刊推荐列表(2022) 。数据集从高到低分为：A(T1), B(T2), C, D。|
-|scu| | 《四川大学-高质量科技期刊及学术会议分级参考方案（暂行）-2021年4月.xlsx》。数据集从高到低分为：A, A-, B, C, D, E。|
-|utd24| |《互联网公开收集》， 该数据集只有一个等级。|
-|ft50| |《互联网公开收集》 ，该数据集只有一个等级。|
-|sciUp| 中科院升级版 | 微信小程序：《中科院文献情报分区中心表2022年12月最新》数据集从高到低分为1区，2区，3区，4区。|
-|sciBase| 中科院基础版 | 微信小程序：《中科院文献情报分区中心表2021年12月最新》数据集从高到低分为1区，2区，3区，4区。|
-|sciwarn| 中科院预警 | 《国际期刊预警名单(试行)-2021.12.31》 ，该数据集只有一个等级。|
-|cju| | 《长江大学自然科学高质量期刊（中国期刊）分级目录（2021版）.pdf》数据集从高到低分为T1, T2, T3。|
-|zju| | 《浙江大学国内学术期刊分级目录指南·2020版.pdf》数据集从高到低分为国内一级学术期刊，国内一级核心期刊。|
+|ccf|  |China Computer Federation Recommended International Academic Conferences and Journals, Chinese Science and Technology Journals Directory-2019, High-Quality Science and Technology Journals Classification Directory in Computing Field. Dataset ranked from high to low: A(T1), B(T2), C(T3).|
+|swufe| |Southwestern University of Finance and Economics Academic Journal Directory 2018. Dataset ranked from high to low: A+, A, B, C.|
+|cufe| |Central University of Finance and Economics Journal Directory (2019 Edition). Dataset ranked from high to low: AAA, AA, A.|
+|ssci| |JCR-Partition-Impact Factor-2022(2022.6.28).pdf. Dataset ranked from high to low: Q1, Q2, Q3, Q4.|
+|sci| |JCR-Partition-Impact Factor-2022(2022.6.28).pdf. Dataset ranked from high to low: Q1, Q2, Q3, Q4.|
+|sciif| |JCR-Partition-Impact Factor-2022(2022.6.28).pdf. EasyScholar divides impact factors into 5 levels from 10, 4, 2, 1, 0.|
+|jci| |JCR-Partition-Impact Factor-2022(2022.6.28).pdf. EasyScholar divides JCI index into 4 levels from 3, 1, 0.5, 0.|
+|sciif5| |Since the latest 5-year impact factor data has not been collected yet, the 2021 data is still used. EasyScholar divides 5-year impact factors into 5 levels from 10, 4, 2, 1, 0.|
+|ahci| |JCR-Partition-Impact Factor-2022(2022.6.28).pdf. This dataset has only one level.|
+|fdu| |Fudan University Postgraduate Education Domestic Journal Guide Directory (January 2018 Revision). Dataset ranked from high to low: A, B.|
+|sjtu| |Shanghai Jiao Tong University SCI/SCIE Paper Grade A and Grade B Journal Classification Directory and Other Publications Grade Reference (2018.5). Dataset ranked from high to low: A, B.|
+|xmu| |Xiamen University Humanities and Social Sciences Core Academic Journal Directory (2017). This dataset has only one level: First Class.|
+|cssci| |CSSCI Source Journals, Extended Edition Directory 2021-2022. Dataset ranked from high to low: CSSCI, CSSCI Extended Edition.|
+|ruc| |Renmin University of China Core Journal Directory 2017. Dataset ranked from high to low: A+, A, A-, B.|
+|cscd| |Chinese Science Citation Database Source Journal List (2021-2022). Dataset ranked from high to low: Core Database, Extended Database.|
+|swjtu| |Southwest Jiaotong University Academic Journal Classification Directory (2017 Revised Edition). Dataset ranked from high to low: A++, A+, A, B+, B.|
+|uibe| |University of International Business and Economics Research Award Foreign Core Journal Thematic Classification Directory. Dataset ranked from high to low: A, A-, B.|
+|pku| |Chinese Core Journal Directory Overview (2020 Edition). This dataset has only one level.|
+|xdu| |Notice on the Announcement of Xidian University High-Quality Journal Directory (2021). Dataset ranked from high to low: First Class Contribution, Second Class Contribution.|
+|sdufe| |Shandong University of Finance and Economics Academic Journal Classification Directory. Dataset ranked from high to low: Special Class Journals, A1, A2, B, C.|
+|eii| EI Indexed |CPXSourceList062022.xlsx. This dataset has only one level.|
+|nju| |Nanjing University Super First-Class, Discipline Group First-Class, SCI Zone A and Zone B Journal Directory.xlsx. Dataset ranked from high to low: Super First-Class Journals (Discipline Group First-Class Journals), A, B.|
+|zhongguokejihexin| Chinese Science and Technology Core Journals Directory |2021 Edition Chinese Science and Technology Core Journals Directory.pdf. This dataset has only one level.|
+|cqu| |Chongqing University Humanities and Social Sciences, Natural Sciences Journal Classification Summary. Dataset ranked from high to low: A (Authoritative Journals), B (Important Journals), C.|
+|hhu| |Hohai University High-Quality Paper Journal and Academic Conference Directory (Natural Sciences, excluding Computer Science and Technology, Software Engineering). Dataset ranked from high to low: Class A, Class B, Class C.|
+|ajg| |ABS-2021.pdf English approximately 1700 types. Dataset ranked from high to low: 4*, 4, 3, 2, 1|
+|xju| |Xinjiang University 2020 Edition Natural Science, Humanities and Social Science Academic Journal Directory, 2021 Humanities and Social Science Academic Journal Adjustment Directory. Dataset ranked from high to low: Zone 1, Zone 2, Zone 3, Zone 4, Zone 5.|
+|cug| |China University of Geosciences Science and Technology, Humanities and Social Sciences Journal Partition Summary. Dataset ranked from high to low: T1, T2, T3, T4, T5.|
+|fms| | FMS Management Science High-Quality Journal Recommendation List (2022). Dataset ranked from high to low: A(T1), B(T2), C, D.|
+|scu| | Sichuan University - High-Quality Science and Technology Journals and Academic Conference Classification Reference Plan (Trial) - April 2021.xlsx. Dataset ranked from high to low: A, A-, B, C, D, E.|
+|utd24| |Publicly collected from the internet. This dataset has only one level.|
+|ft50| |Publicly collected from the internet. This dataset has only one level.|
+|sciUp| Chinese Academy of Sciences Upgraded Version | WeChat Mini Program: "Chinese Academy of Sciences Literature and Information Partition Center Table Latest December 2022" Dataset ranked from high to low as Zone 1, Zone 2, Zone 3, Zone 4.|
+|sciBase| Chinese Academy of Sciences Basic Version | WeChat Mini Program: "Chinese Academy of Sciences Literature and Information Partition Center Table Latest December 2021" Dataset ranked from high to low as Zone 1, Zone 2, Zone 3, Zone 4.|
+|sciwarn| Chinese Academy of Sciences Warning | "International Journal Warning List (Trial) - 2021.12.31". This dataset has only one level.|
+|cju| | "Yangtze University Natural Science High-Quality Journals (Chinese Journals) Classification Directory (2021 Edition).pdf" Dataset ranked from high to low as T1, T2, T3.|
+|zju| | "Zhejiang University Domestic Academic Journal Classification Directory Guide 2020 Edition.pdf" Dataset ranked from high to low as Domestic First-Class Academic Journals, Domestic First-Class Core Journals.|
 
 If you are using a custom dataset, you must locate the custom field definition of the dataset and fill it in the `Fields` section.
 
@@ -166,7 +166,7 @@ SCI=,
 EI:
 
 ```ini
-EI检索=EI, 
+EI Indexed=EI, 
 ```
 
 Decrease decimal:
@@ -175,39 +175,39 @@ Decrease decimal:
 /^(\d+)\.(\d{1})\d*$/=$1.$2, 
 ```
 
-Chinese 中文检索：
+Chinese Core Journals:
 
 ```ini
-北大中文核心=北核, 
+PKU Chinese Core=PKU Core, 
 ```
 
-Chinese Academy of Sciences (CAS) warnings 中科院预警：
+Chinese Academy of Sciences (CAS) warnings:
 
 ```ini
 SCIWARN=🚫, 
 ```
 
-CAS quartiles 中科院分区升级版:
+CAS quartiles - Upgraded Version:
 
 ```ini
-/医学(\d+)区/=医$1, 
-/生物学(\d+)区/=生$1, 
-/农林科学(\d+)区/=农$1, 
-/环境科学与生态学(\d+)区/=环$1, 
-/化学(\d+)区/=化$1, 
-/工程技术(\d+)区/=工$1, 
-/数学(\d+)区/=数$1, 
-/物理与天体物理(\d+)区/=物$1, 
-/地球科学(\d+)区/=地$1, 
-/材料科学(\d+)区/=材$1, 
-/计算机科学(\d+)区/=计$1, 
-/经济学(\d+)区/=经$1, 
-/法学(\d+)区/=法$1, 
-/管理学(\d+)区/=管$1, 
-/心理学(\d+)区/=心$1, 
-/人文科学(\d+)区/=人$1, 
-/教育学(\d+)区/=教$1, 
-/综合性期刊(\d+)区/=综$1, 
+/Medicine(\d+) Zone/=Med$1, 
+/Biology(\d+) Zone/=Bio$1, 
+/Agriculture and Forestry(\d+) Zone/=Agr$1, 
+/Environmental Science and Ecology(\d+) Zone/=Env$1, 
+/Chemistry(\d+) Zone/=Che$1, 
+/Engineering and Technology(\d+) Zone/=Eng$1, 
+/Mathematics(\d+) Zone/=Mat$1, 
+/Physics and Astrophysics(\d+) Zone/=Phy$1, 
+/Earth Sciences(\d+) Zone/=Ear$1, 
+/Materials Science(\d+) Zone/=Mat$1, 
+/Computer Science(\d+) Zone/=CS$1, 
+/Economics(\d+) Zone/=Eco$1, 
+/Law(\d+) Zone/=Law$1, 
+/Management(\d+) Zone/=Mgmt$1, 
+/Psychology(\d+) Zone/=Psy$1, 
+/Humanities(\d+) Zone/=Hum$1, 
+/Education(\d+) Zone/=Edu$1, 
+/Comprehensive Journals(\d+) Zone/=Comp$1, 
 ```
 
 </details>
@@ -326,25 +326,25 @@ Two ways display your tags after assigning color and position: (1) you can open 
 
 ## Recommended Links
 
-### B站
-- [Zotero Style 使用手册](https://www.bilibili.com/video/BV1ss4y1E7sX)
-- [Zotero Style插件你值得拥有！关系图谱也有！](https://www.bilibili.com/video/BV1as4y1a7Gf)
-- [zotero-style - 使用示例，以及配色征集](https://www.bilibili.com/video/BV1BA411R7hb)
-- [zotero-style插件 - 标签标题对齐，为文献添加阅读高能进度条！](https://www.bilibili.com/video/BV1PK411o7JN)
-- [Zotero Style - 更新一些花里胡哨的功能，以及一个有用的参考文献导入](https://www.bilibili.com/video/BV1Z44y1D7nP)
+### Bilibili (Chinese Platform)
+- [Zotero Style User Manual](https://www.bilibili.com/video/BV1ss4y1E7sX)
+- [Zotero Style Plugin You Deserve! Relationship Graph Included!](https://www.bilibili.com/video/BV1as4y1a7Gf)
+- [zotero-style - Usage Examples and Color Scheme Collection](https://www.bilibili.com/video/BV1BA411R7hb)
+- [zotero-style Plugin - Tag Title Alignment, Adding High-Energy Progress Bar for Literature!](https://www.bilibili.com/video/BV1PK411o7JN)
+- [Zotero Style - Updates with Fancy Features and a Useful Reference Import](https://www.bilibili.com/video/BV1Z44y1D7nP)
 
-### 小红书
+### XiaoHongShu (Chinese Platform)
 
-- [Zotero-Style插件下载及基础使用教程～～](http://xhslink.com/tlz9So)
-- [Zotero新插件介绍 - Zotero Style](http://xhslink.com/PnHlCn)
-- [zotero style｜一个督促你阅读文献的插件](http://xhslink.com/iUJlCn)
-- [能够显示高能阅读进度条的zotero宝藏插件](http://xhslink.com/TPJlCn)
-- [Zotero超好用插件｜阅读进度可视化](http://xhslink.com/QSKlCn)
-- [寒假高校看论文 | Zotero论文进度可视化](http://xhslink.com/yoMlCn)
-- [Zotero style简单设置教程~](http://xhslink.com/yNQBUn)
-- [我学会怎么改zotero注释颜色的名字啦！！](http://xhslink.com/jfMeQo)
-- [zotero style教程|让你的zotero更有趣！](http://xhslink.com/VBSeQo)
-- [期刊标签配置密钥](http://xhslink.com/d5E72o)
+- [Zotero-Style Plugin Download and Basic Usage Tutorial](http://xhslink.com/tlz9So)
+- [Zotero New Plugin Introduction - Zotero Style](http://xhslink.com/PnHlCn)
+- [zotero style | A Plugin That Motivates You to Read Literature](http://xhslink.com/iUJlCn)
+- [A Treasure Zotero Plugin That Shows High-Energy Reading Progress Bar](http://xhslink.com/TPJlCn)
+- [Super Useful Zotero Plugin | Reading Progress Visualization](http://xhslink.com/QSKlCn)
+- [Winter Holiday Paper Reading | Zotero Paper Progress Visualization](http://xhslink.com/yoMlCn)
+- [Zotero style Simple Setup Tutorial~](http://xhslink.com/yNQBUn)
+- [I Learned How to Change Zotero Annotation Color Names!!](http://xhslink.com/jfMeQo)
+- [zotero style tutorial | Make Your Zotero More Interesting!](http://xhslink.com/VBSeQo)
+- [Journal Tag Configuration Key](http://xhslink.com/d5E72o)
 
 ## Acknowledgements
 
@@ -363,4 +363,4 @@ Two ways display your tags after assigning color and position: (1) you can open 
 
 ## Sponsor
 
-[Here](https://github.com/MuiseDestiny/zotero-reference#%E8%B5%9E%E5%8A%A9)
+[Here](https://github.com/MuiseDestiny/zotero-reference#sponsor)
