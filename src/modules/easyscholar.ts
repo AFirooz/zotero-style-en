@@ -48,7 +48,7 @@ const field2Info: any = {
     return { rank, key, value }
   },
   sciBase(s: string) {
-    let key = "SCI基础版", value = s;
+    let key = "SCI Basic Edition", value = s;
     s = s.substring(s.length - 2);
     let rank
     if (s == "1区") {
@@ -63,7 +63,7 @@ const field2Info: any = {
     return { rank, key, value }
   },
   sciUp(s: string) {
-    let key = "SCI升级版", value = s;
+    let key = "SCI Upgraded Edition", value = s;
     s = s.substring(s.length - 2);
     let rank
     if (s == "1区") {
@@ -94,7 +94,7 @@ const field2Info: any = {
     return {rank, key, value}
   },
   eii(s: string) {
-    let key = "EI检索", value = "";
+    let key = "EI Indexed", value = "";
     let rank = 2
     return { rank, key, value: ""}
   },
@@ -104,6 +104,7 @@ const field2Info: any = {
     if (s == "CSSCI") {
       rank = 1
     } else if (s == "CSSCI扩展版") {
+      key = "CSSCI Extended Edition"
       rank = 2
     }
     return {rank, key, value}
@@ -112,6 +113,7 @@ const field2Info: any = {
     let key = "NJU", value = s;
     let rank
     if (s == "超一流期刊" || s == "学科群一流期刊") {
+      value = "Top-tier Journal"
       rank = 1
     } else if (s == "A") {
       rank = 2
@@ -121,7 +123,7 @@ const field2Info: any = {
     return {rank, key, value}
   },
   pku(s: string) {
-    let key = "北大中文核心", value = ""
+    let key = "PKU Chinese Core", value = ""
     let rank = 1
     return { rank, key, value }
   },
@@ -129,14 +131,19 @@ const field2Info: any = {
     let key = "XJU", value = s;
     let rank
     if (s == "一区") {
+      value = "Zone 1"
       rank = 1
     } else if (s == "二区") {
+      value = "Zone 2"
       rank = 2
     } else if (s == "三区") {
+      value = "Zone 3"
       rank = 3
     } else if (s == "四区") {
+      value = "Zone 4"
       rank = 4
     } else if (s == "五区") {
+      value = "Zone 5"
       rank = 5
     } 
     return {rank, key, value}
@@ -161,7 +168,7 @@ const field2Info: any = {
   },
   ahci(s: string) {
     let rank = 2
-    let key = "A&HCI 检索"
+    let key = "A&HCI Indexed"
     let value = ""
     return { rank, key, value }
   },
@@ -186,8 +193,10 @@ const field2Info: any = {
     let value = s
     let rank
     if (s == "A" || s == "权威期刊") {
+      if (s == "权威期刊") value = "Authoritative Journal"
       rank = 2
     } else if (s == "B" || s == "重要期刊") {
+      if (s == "重要期刊") value = "Important Journal"
       rank = 3
     } else if (s == "C") {
       rank = 4
@@ -198,8 +207,10 @@ const field2Info: any = {
     let key = "CSCD", value = s;
     let rank
     if (s == "扩展库") {
+      value = "Extended Library"
       rank = 3
     } else if (s == "核心库") {
+      value = "Core Library"
       rank = 2
     }
     return { rank, key, value }
@@ -248,10 +259,13 @@ const field2Info: any = {
     let key = "HHU", value = s;
     let rank
     if (s == "A类") {
+      value = "Class A"
       rank = 1
     } else if (s == "B类") {
+      value = "Class B"
       rank = 2
     } else if (s == "c类") {
+      value = "Class C"
       rank = 3
     }
     return { rank, key, value }
@@ -289,6 +303,7 @@ const field2Info: any = {
     let key = "SDUFE", value = s;
     let rank
     if (s == "特类期刊") {
+      value = "Special Journal"
       rank = 1
     } else if (s == "A1") {
       rank = 2
@@ -346,7 +361,7 @@ const field2Info: any = {
     let key, value;
     let rank
     if (s == "XMU一类") {
-      key = s
+      key = "XMU Class 1"
       value = ""
       rank = 2
     }
@@ -356,8 +371,10 @@ const field2Info: any = {
     let key = "XDU", value = s;
     let rank
     if (s == "1类贡献度") {
+      value = "Class 1 Contribution"
       rank = 1
     } else if (s == "2类贡献度") {
+      value = "Class 2 Contribution"
       rank = 2
     }
     return { rank, key, value }
@@ -366,7 +383,7 @@ const field2Info: any = {
     let key, value, rank
     if (s == "中国科技核心期刊") {
       rank = 1
-      key = s
+      key = "China Science and Technology Core Journal"
       value = ""
     }
     return { rank, key, value }
@@ -418,8 +435,10 @@ const field2Info: any = {
     let rank
 
     if (s == "国内一级") {
+      value = "Domestic First-class"
       rank = 1
     } else if (s == "国内核心") {
+      value = "Domestic Core"
       rank = 2
     }
     return { rank, key, value }
@@ -458,14 +477,19 @@ const field2Info: any = {
   CPU(s: string) {
     let key = "CPU", value = s, rank
     if (s == "一流") {
+      value = "First-class"
       rank = 1
     } else if (s == "权威") {
+      value = "Authoritative"
       rank = 2
     } else if (s == "学科顶尖") {
+      value = "Top in Discipline"
       rank = 3
     } else if (s == "学科一流") {
+      value = "First-class in Discipline"
       rank = 4
     } else if (s == "学科重要") {
+      value = "Important in Discipline"
       rank = 5
     }
     return { rank, key, value }
