@@ -324,6 +324,14 @@ Two ways display your tags after assigning color and position: (1) you can open 
 
 </details>
 
+<details>
+
+<summary>How to build from source?</summary>
+
+To learn how to build from source and release, see this [link](https://github.com/MuiseDestiny/zotero-addon-template#build-from-source).
+
+</details>
+
 ## Recommended Links
 
 ### B站
