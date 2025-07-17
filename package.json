@@ -1,14 +1,14 @@
 {
-  "name": "zotero-style",
+  "name": "zotero-style-en",
   "version": "2.6.7",
-  "description": "A Zotero plugin for creating a personal Zotero Style.",
+  "description": "A Zotero plugin for creating a personal Zotero Style (English fork).",
   "config": {
-    "addonName": "Zotero Style",
-    "addonID": "zoterostyle@polygon.org",
-    "addonInstance": "ZoteroStyle",
-    "addonRef": "zoterostyle",
-    "releasepage": "https://github.com/MuiseDestiny/zotero-style/releases/latest/download/zotero-style.xpi",
-    "updaterdf": "https://raw.githubusercontent.com/MuiseDestiny/zotero-style/bootstrap/update.json"
+    "addonName": "Zotero Style EN",
+    "addonID": "zoterostyle-en@afirooz.org",
+    "addonInstance": "ZoteroStyleEN",
+    "addonRef": "zoterostyle-en",
+    "releasepage": "https://github.com/AFirooz/zotero-style-en/releases/latest/download/zotero-style-en.xpi",
+    "updaterdf": "https://raw.githubusercontent.com/AFirooz/zotero-style-en/main/update.json"
   },
   "main": "src/index.ts",
   "scripts": {
@@ -29,14 +29,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MuiseDestiny/zotero-style.git"
+    "url": "git+https://github.com/AFirooz/zotero-style-en.git"
   },
-  "author": "Polygon",
+  "author": "AFirooz",
   "license": "AGPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/MuiseDestiny/zotero-style/issues"
+    "url": "https://github.com/AFirooz/zotero-style-en/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/AFirooz/zotero-style-en",
   "dependencies": {
     "@authing/native-js-ui-components": "^4.3.10",
     "3d-force-graph": "^1.71.1",
@@ -59,10 +59,12 @@
   "devDependencies": {
     "@types/node": "^18.13.0",
     "compressing": "^1.7.0",
+    "concurrently": "^9.2.0",
     "cross-env": "^7.0.3",
     "esbuild": "^0.16.17",
     "release-it": "^15.6.0",
     "replace-in-file": "^6.3.5",
+    "typescript": "^5.8.3",
     "uglify-js": "^3.17.4",
     "zotero-types": "^0.1.5"
   }
