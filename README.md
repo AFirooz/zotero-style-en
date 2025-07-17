@@ -166,7 +166,7 @@ SCI=,
 EI:
 
 ```ini
-EI检索=EI, 
+EI Indexed=EI, 
 ```
 
 Decrease decimal:
@@ -178,7 +178,7 @@ Decrease decimal:
 Chinese PKU Chinese Core:
 
 ```ini
-北大中文核心=PKU Core, 
+PKU Chinese Core=PKU Core, 
 ```
 
 Chinese Academy of Sciences (CAS) warnings:

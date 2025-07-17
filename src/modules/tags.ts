@@ -357,7 +357,7 @@ export class Tags {
       .forEach((item: Zotero.Item) => {
         plainTags = plainTags.concat(item.getTags().map(i => i.tag))
       })
-    // TODO: 提供设置，可以不以#开头
+    // TODO: Provide setting to allow tags not starting with #
     plainTags = plainTags
       .filter((tag: string) => {
         return Tags.getTagMatch(tag)
@@ -380,16 +380,16 @@ export class Tags {
     const linkSymbol = Zotero.Prefs.get(`${config.addonRef}.nestedTags.linkSymbol`) as string
     let nestedTags = {}
     for (let i = 0; i < this.plainTags.length; i++) {
-      // tag是Zotero原始标签，比如`#数学/微积分`
+      // tag is the original Zotero tag, e.g., `#Mathematics/Calculus`
       let plainTag = this.plainTags[i]
       let splitTags = plainTag.replace(/^#\s*/, "").split(linkSymbol)
-      // _nestedTags用于逐层获取数据引用
+      // _nestedTags used for layer-by-layer data reference retrieval
       let _nestedTags: any = nestedTags
       for (let j = 0; j < splitTags.length; j++) {
         let temp = _nestedTags[splitTags[j]] ??= {
           number: 0,
           children: {},
-          // 用于区分当前分级标签，也用于和filter通信
+          // Used to distinguish current hierarchical tags and communicate with filter
           id: JSON.stringify([plainTag, j]),
         }
         temp.number += 1
@@ -400,8 +400,8 @@ export class Tags {
   }
 
   /**
-   * 用于获取标签的开头
-   * 从[plainTag, index]解析，记录在this.state里
+   * Used to get the beginning of tags
+   * Parsed from [plainTag, index], recorded in this.state
    * @returns 
    */
   public getTagStart = () => {
@@ -412,24 +412,24 @@ export class Tags {
   }
 
   /**
-   * 用于#标签获取映射后的标签名，也用于嵌套标签视图的标签验证
-   * @param tag 要匹配的标签名称
-   * @returns 如果和正则匹配，返回括号里的内容，不匹配则返回空
+   * Used for # tags to get mapped tag names, also used for nested tag view validation
+   * @param tag The tag name to match
+   * @returns If matched with regex, returns content in parentheses, otherwise returns empty
    */
   static getTagMatch(tag: string) {
     try {
       const rawString = Zotero.Prefs.get(`${config.addonRef}.textTagsColumn.match`) as string
       const res = rawString.match(/\/(.+)\/(\w*)/)
       let regex: RegExp;
-      // 是正则表达式
+      // Is regular expression
       if (res) {
         regex = new RegExp(res[1], res[2])
       }
-      // 不以xxx开头
+      // Does not start with xxx
       else if (rawString.startsWith("~~")) {
         regex = new RegExp(`^([^${rawString.slice(2)}].+)`)
       }
-      // 以xxx开头
+      // Starts with xxx
       else {
         regex = new RegExp(`^${rawString}(.+)`)
       }
@@ -442,7 +442,7 @@ export class Tags {
 
   public updateTagsIn(sortedItems?: Zotero.Item[]) {
     if (!this.collectionItems) { return }
-    // 读取本次的items标签和collection标签
+    // Read current items tags and collection tags
     if (!sortedItems) {
       let sortedIDs = new Set(ZoteroPane.getSortedItems().map(item => item.id));
       sortedItems = this.collectionItems.filter((item: Zotero.Item) =>
@@ -495,12 +495,12 @@ export class Tags {
     })
   }
   /**
-   * 刷新
+   * Refresh
    */
   public async refresh() {
-    // 移除原本创建的元素
+    // Remove originally created elements
     this.container.querySelector("#nested-tags-container")?.remove()
-    // 存在this，用于splitter变化调整时使用
+    // this exists for use when splitter changes
     const nestedTagsContainer = this.nestedTagsContainer = ztoolkit.UI.appendElement({
       tag: "div",
       id: this.nestedTagsID,
@@ -527,7 +527,7 @@ export class Tags {
         overflowY: "auto"
       }
     }, this.nestedTagsContainer) as HTMLDivElement;
-    // 搜索框
+    // Search box
     const searchBoxHeight = 15
     let timer: number;
     const searchBox = ztoolkit.UI.appendElement({
@@ -601,10 +601,10 @@ export class Tags {
                 }
                 window.clearTimeout(timer)
                 timer = window.setTimeout(async () => {
-                  // 搜索
+                  // Search
                   console.log("search...", searchText)
                   this.searchText = searchText
-                  // 复制一份
+                  // Make a copy
                   this.plainTags = await this.getPlainTags()
                   this.nestedTags = await this.getNestedTags()
                   box.innerHTML = ""
@@ -634,7 +634,7 @@ export class Tags {
                 inputNode.value = ""
                 clearNode.style.display = "none"
                 this.searchText = ""
-                // 复制一份
+                // Make a copy
                 this.plainTags = await this.getPlainTags()
                 this.nestedTags = await this.getNestedTags()
                 box.innerHTML = ""
@@ -683,7 +683,7 @@ export class Tags {
               type: "click",
               listener: (event: any) => {
                 const x = event.clientX, y = event.clientY
-                // 创建菜单
+                // Create menu
                 const menuItems = [];
                 const selectedIndex = Number(Zotero.Prefs.get(`${config.addonRef}.nestedTags.sorted`));
                 for (let i = 0; i < this.props.sorted.length; i++) {
@@ -720,7 +720,7 @@ export class Tags {
                 // @ts-ignore
                 const node = this as HTMLDivElement
                 if (nestedTagsContainer.style.display == "none") {
-                  // 显示
+                  // Show
                   nestedTagsContainer.style.display = "flex";
                   that.init(true)
                   tagSelector.style!.display = "none"
@@ -738,7 +738,7 @@ export class Tags {
                   node.style.opacity = "0.85"
                   node.style.color = "#5a5a5a"
                 } else {
-                  // 隐藏
+                  // Hide
                   nestedTagsContainer.style.display = "none";
                   tagSelector.style!.display = "";
                   node.parentNode?.childNodes.forEach((e: any) => {
@@ -801,7 +801,7 @@ export class Tags {
   /**
    * 
    * @param rect 
-   * @param items "---" 表示分割
+   * @param items "---" indicates separator
    */
   public createMenuNode(
     rect: { x: number, y: number, width: number, height: number },
@@ -894,7 +894,7 @@ export class Tags {
     }, document.documentElement)
     const winRect = document.documentElement.getBoundingClientRect()
     const nodeRect = menuNode.getBoundingClientRect()
-    // 避免溢出
+    // Avoid overflow
     if (nodeRect.bottom > winRect.bottom) {
       menuNode.style.top = ""
       menuNode.style.bottom = "0px"
@@ -903,17 +903,17 @@ export class Tags {
   }
 
   /**
-   * 从给定的items找出包含标签的
+   * Find items containing tags from the given items
    */
   public filterItemsByTagStart(items: Zotero.Item[], tagStart: string) {
     const filterItems: Zotero.Item[] = []
     for (let i = 0; i < items.length; i++) {
       let item = items[i]
-      // 可见标签条目
+      // Visible tag items
       if ((item.getTags && item.getTags().find((tag: { tag: string }) => tag.tag.startsWith(tagStart)))) {
         filterItems.push(item)
       }
-      // 不可见标签条目
+      // Invisible tag items
       if (item.isAttachment() && item.attachmentContentType == "application/pdf") {
         let flag = false
         item.getAnnotations().forEach(annoItem => {
@@ -937,10 +937,10 @@ export class Tags {
    * @param margin 
    */
   public async render(parent: HTMLElement, children: any, margin: number = 0) {
-    // 标签排序
+    // Tag sorting
     let sortedTags: string[] = this.getSortedTags(children)
     for (let tag of sortedTags) {
-      // 默认折叠
+      // Default collapsed
       const key = children[tag].id;
       (this.state[key] ??= {}).collapse ??= true
       const itemNode = ztoolkit.UI.appendElement({
@@ -988,23 +988,23 @@ export class Tags {
                       type: "click",
                       listener: async () => {
                         if (itemNode.classList.contains("not-in-collection")) { return }
-                        // 如果点一个无法构成AND的标签，则切换标签
+                        // If clicking a tag that cannot form AND, switch tags
                         if (itemNode.classList.contains("not-in-items")) {
                           Object.keys(this.state).forEach(key => this.state[key].select = false)
                         }
-                        // 点击标签名筛选逻辑
+                        // Tag name click filtering logic
                         if (this.state[key].select) {
-                          // 取消点击
+                          // Cancel click
                           this.state[key].select = false
                           itemNode.classList.remove("selected")
                         } else {
-                          // 点击匹配
-                          // #226: 允许多个select构成AND
+                          // Click match
+                          // #226: Allow multiple selects to form AND
                           // @ts-ignore
                           // this.nestedTagsContainer.querySelectorAll(".item").forEach(e => e.style.backgroundColor = "")
                           this.state[key].select = true
                           itemNode.classList.add("selected")
-                          // 记住当前rows状态
+                          // Remember current rows state
                         }
                         var beginTime = +new Date();
 
@@ -1152,7 +1152,7 @@ export class Tags {
         }
         ]
       }, parent) as HTMLElement
-      // 判断是否可点击选择
+      // Check if clickable for selection
       // @ts-ignore
       itemNode.update = () => {
         const tagStart = this.key2tag(key)
@@ -1176,14 +1176,14 @@ export class Tags {
           })
         }
       }
-      // 不阻塞渲染
+      // Do not block rendering
       window.setTimeout(() => {
         // @ts-ignore
         itemNode.update()
       })
-      // 有子节点
+      // Has child nodes
       if (Object.keys(children[tag].children).length) {
-        // tree, 侧边线容器
+        // tree, sidebar container
         let tree = ztoolkit.UI.appendElement({
           tag: "div",
           classList: ["tree"],
@@ -1193,7 +1193,7 @@ export class Tags {
             paddingLeft: `${this.props.icon.size / 2 + this.props.icon.right}px`,
           }
         }, parent) as HTMLDivElement
-        // 在标签名前插入折叠图标
+        // Insert collapse icon before tag name
         let collapseNode = ztoolkit.UI.insertElementBefore({
           tag: "div",
           classList: ["collapse"],
@@ -1211,7 +1211,7 @@ export class Tags {
             {
               type: "click",
               listener: () => {
-                // 从obsidian源码找到的过度
+                // Transition found from obsidian source code
                 const duration = 100
                 const transition = `height ${duration}ms cubic-bezier(0.02, 0.01, 0.47, 1) 0s`
                 this.state[key].collapse = !this.state[key].collapse
@@ -1219,7 +1219,7 @@ export class Tags {
                 tree.style.overflow = "hidden";
                 tree.style.transition = "none"
                 if (this.state[key].collapse) {
-                  // 折叠
+                  // Collapse
                   tree.style.height = window.getComputedStyle(tree).height;
                   // console.log("from", tree.style.height)
                   tree.style.transition = transition;
@@ -1231,7 +1231,7 @@ export class Tags {
                     tree.querySelectorAll("*").forEach(e => e.remove())
                   }, duration)
                 } else {
-                  // 展开
+                  // Expand
                   tree.style.height = ""
                   // @ts-ignore
                   this.render(...args)
@@ -1331,7 +1331,7 @@ export class Tags {
             cursor: "pointer",
           },
           children: [
-            // 标题 + 页码
+            // Title + page number
             {
               tag: "div",
               styles: {
@@ -1341,7 +1341,7 @@ export class Tags {
                 justifyContent: "space-between",
               },
               children: [
-                // 标题
+                // Title
                 {
                   tag: "div",
                   styles: {
@@ -1382,7 +1382,7 @@ export class Tags {
               ]
             },
   
-            // 标注内容
+            // Annotation content
             {
               tag: "div",
               classList: ["content"],
@@ -1393,7 +1393,7 @@ export class Tags {
                 innerText: annoItem.annotationText || `Annotation Type: ${annoItem.annotationType}. Please double-click to view detailed information.`
               }
             },
-            // 评论
+            // Comment
             {
               tag: "div",
               styles: {
@@ -1407,7 +1407,7 @@ export class Tags {
                 innerText: annoItem.annotationComment
               }
             },
-            // 标签
+            // Tags
             {
               tag: "div",
               classList: ["tags-box"],

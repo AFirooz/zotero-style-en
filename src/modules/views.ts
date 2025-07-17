@@ -97,7 +97,7 @@ export default class Views {
               to{transform: rotate(359deg)}
           }
           `
-          // 这里添加后会让Mac的图标变形，所以遇Mac不添
+          // Adding here will deform icons on Mac, so not adding on Mac
           + (Zotero.isMac ? "" : `
           #zotero-style-show-hide-graph-view .toolbarbutton-icon {
             width: 16px;
@@ -110,11 +110,11 @@ export default class Views {
   }
 
   /**
-   * 渲染标题进度条，调整标签
-   * 标题是必定显示的所以奇数偶数显示逻辑写在这里
+   * Render title progress bar, adjust tags
+   * Title is always displayed so odd/even display logic is written here
    */
   public async renderTitleColumn() {
-    // 防止与其他插件冲突
+    // Prevent conflicts with other plugins
     await Zotero.Promise.delay(1000)
     ztoolkit.log("renderTitleColumn")
     if (!Zotero.Prefs.get(`${config.addonRef}.function.titleColumn.enable`) as boolean) { return }
@@ -134,7 +134,7 @@ export default class Views {
           } catch { }
         }
         const cellSpan = original(index, data, column) as HTMLSpanElement;
-        // 图标替换
+        // Icon replacement
         try {
           this.replaceCellIcon(ZoteroPane.getSortedItems()[index], cellSpan)
         } catch { }
@@ -155,7 +155,7 @@ export default class Views {
         if (!Zotero.Prefs.get(
           `${config.addonRef}.titleColumn.tags`
         )) {
-          // 移除标签
+          // Remove tags
           cellSpan.querySelectorAll(".tag-swatch").forEach(e => {
             e.remove()
           })
@@ -346,14 +346,14 @@ export default class Views {
   }
 
   /**
-   * 把标签从标题分离为单独的列
+   * Separate tags from title into a separate column
    */
   public async createTagsColumn() {
     if (!Zotero.Prefs.get(`${config.addonRef}.function.tagsColumn.enable`) as boolean) { return } 
-    // 用于分离多emoj，很魔鬼的bug
+    // Used to separate multiple emojis, a devil of a bug
     const runes = require("runes")
     try {
-      // 新增加的标签列，在调用Zotero.Tags，setColor时不会刷新
+      // Newly added tag columns do not refresh when calling Zotero.Tags.setColor
       ztoolkit.patch(Zotero.Tags, "setColor", config.addonRef + "setColor", (original) => {
         return async (id: number, name: string, color: string, pos: number) => {
           await original.call(Zotero.Tags, id, name, color, pos)
@@ -462,7 +462,7 @@ export default class Views {
   }
 
   /**
-   * #标签，只显#标注的示文字标签
+   * # tags, only show text tags marked with #
    */
   public async createTextTagsColumn() {
     if (!Zotero.Prefs.get(`${config.addonRef}.function.textTagsColumn.enable`) as boolean) { return }
@@ -585,8 +585,8 @@ export default class Views {
   }
 
   /**
-   * 创建分区影响因子列
-   * 不同分区用不同颜色表示，不同影响因子用长度表示，默认是当前collection最大影响因子
+   * Create partition impact factor column
+   * Different partitions represented by different colors, different impact factors by length, default is current collection maximum impact factor
    */
   public async createPublicationTagsColumn() {
     await this.localStorage.lock.promise;
@@ -605,14 +605,14 @@ export default class Views {
         try {
           const data = this.localStorage.get(item, "publication")
           if (data == undefined) {
-            // 自动更新
+            // Auto update
             window.setTimeout(async () => {
               await updatePublicationTags(this.localStorage, item)
             })
             return ""
           }
           if (data == "") { return data }
-          // 排序
+          // Sort
           let sortBy: any = Zotero.Prefs.get(`${config.addonRef}.${key}Column.sortBy`) as string
           sortBy = sortBy.split(/,\s*/g)
           let s = sortBy.map((k: string) => {
@@ -663,7 +663,7 @@ export default class Views {
               return span
             }
             if (Object.keys(data).length == 0) { return span }
-            // 渲染逻辑
+            // Rendering logic
             let rankColors = (Zotero.Prefs.get(`${config.addonRef}.${key}Column.rankColors`) as string).split(/,\s*/g)
             const defaultColor = Zotero.Prefs.get(`${config.addonRef}.${key}Column.defaultColor`) as string
             const textColor = Zotero.Prefs.get(`${config.addonRef}.${key}Column.textColor`) as string
@@ -675,7 +675,7 @@ export default class Views {
             let mapString: any = Zotero.Prefs.get(`${config.addonRef}.${key}Column.map`) as string
             let mapArr: [RegExp | string, string][] = mapString.split(/[,;]\s*/g).filter((s: string)=>s.trim().length).map((ss: string) => {
               let [s1, s2] = ss.split("=")
-              // 如果s1是正则转化为正则
+              // If s1 is regex, convert to regex
               const res = s1.match(/\/(.+)\/(\w*)/)
               if (res) {
                 return [
@@ -752,7 +752,7 @@ export default class Views {
               let [red, green, blue] = c.rgb()
               const hsl = c.HSL()
               hsl[2] = 40
-              // 如果文本颜色是auto，则进行处理
+              // If text color is auto, process it
               span.appendChild(ztoolkit.UI.createElement(document, "span", {
                 styles: {
                   backgroundColor: `rgba(${red}, ${green}, ${blue}, ${opacity})`,
@@ -836,16 +836,16 @@ export default class Views {
   }
 
   /**
-   * 附件标签
+   * Attachment tags
    * `PDF 2.3M` `HTML `
-   * 点击可以打开PDF或网页或其它
+   * Click to open PDF, web page or other
    */
   public async createAttachmentTagsColumn() {
   }
 
   /**
-   * 创建分区影响因子列
-   * 不同分区用不同颜色表示，不同影响因子用长度表示，默认是当前collection最大影响因子
+   * Create partition impact factor column
+   * Different partitions represented by different colors, different impact factors by length, default is current collection maximum impact factor
    */
   public async createIFColumn() {
     await this.localStorage.lock.promise
@@ -958,7 +958,7 @@ export default class Views {
   }
 
   /**
-   * 创建进度列，用于展示标注分布
+   * Create progress column for displaying annotation distribution
    */
   public async createProgressColumn() {
     if (!Zotero.Prefs.get(`${config.addonRef}.function.progressColumn.enable`) as boolean) { return }
@@ -1057,7 +1057,7 @@ export default class Views {
           }
           if (!values.length) { return span}
           if (style != "stack") {
-            // 不是stack，需要精简数据
+            // Not stack, need to streamline data
             if ([...values].sort((a, b) => b -a )[0] == 0) { return span}
             // @ts-ignore
             progressNode = UI[style](
@@ -1103,7 +1103,7 @@ export default class Views {
   }
 
   /**
-   * 模仿Endnote评级
+   * Mimic Endnote rating
    */
   public async createRatingColumn() {
     if (!Zotero.Prefs.get(`${config.addonRef}.function.ratingColumn.enable`) as boolean) { return }
@@ -1203,7 +1203,7 @@ export default class Views {
   }
 
   /**
-   * 顶栏显示视图切换圆点按钮
+   * Top bar displays view switch dot buttons
    */
   public registerSwitchColumnsViewUI() {
     if (!Zotero.Prefs.get(`${config.addonRef}.function.columnsViews.enable`) as boolean) { return }
@@ -1539,16 +1539,16 @@ export default class Views {
           }
           const ns = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
           const menupopup = [...document.querySelectorAll("#zotero-column-picker")].slice(-1)[0]
-          // 分割线
+          // Divider
           let sep = document.createElementNS(ns, "menuseparator");
           menupopup.appendChild(sep);
-          // 保存列视图菜单
+          // Save column view menu
           let colViewPrimaryMenu = document.createElementNS(ns, "menu") as XUL.Menu
           colViewPrimaryMenu.setAttribute("label", getString("column.view.group"))
           let colViewPopup = document.createElementNS(ns, "menupopup") as XUL.MenuItem
           colViewPrimaryMenu.appendChild(colViewPopup)
 
-          // 获取已保存列视图
+          // Get saved column views
           let columnsViews = JSON.parse(Zotero.Prefs.get(prefKey) as string) as ColumnsView[]
           columnsViews = sort(columnsViews)
           let isAdded = false
@@ -1575,7 +1575,7 @@ export default class Views {
                 }
                 updateOptionNode(1000)
               } else if (event.button == 0) {
-                // 等待mouseup事件结束
+                // Wait for mouseup event to end
                 switchColumnsView(columnsView)
               }
             })
@@ -1607,7 +1607,7 @@ export default class Views {
   }
 
   /**
-   * 右键一列弹出列设置窗口
+   * Right-click a column to popup column settings window
    * @param colKey 
    * @param args 
    */
@@ -1635,7 +1635,7 @@ export default class Views {
             rect = document.querySelector(`.${colKey}-item-tree-main-default`)!.getBoundingClientRect()
           } catch { return }
           if (!(left > rect.left && left < rect.right)) { return }
-          // 保存列视图菜单
+          // Save column view menu
           const ns = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
           let menuitem = document.createElementNS(ns, "menuitem") as XUL.Menu
           menuitem.setAttribute("label", getString("column.Setting"))
@@ -1649,10 +1649,10 @@ export default class Views {
             that.addStyle()
             ztoolkit.ItemTree.refresh()
           }
-          // 点击设置弹出对话框
+          // Click settings to popup dialog
           const eachHeight = 25
           menuitem.onclick = () => {
-            // 根据args创建元素
+            // Create elements based on args
             let element = ztoolkit.UI.createElement(
               document,
               "div",
@@ -1704,7 +1704,7 @@ export default class Views {
               }
             ) as any
             for (let arg of args) {
-              // 名称
+              // Name
               element.querySelector("#name")?.appendChild(
                 ztoolkit.UI.createElement(
                   document,
@@ -1717,7 +1717,7 @@ export default class Views {
                   }
                 )
               )
-              // 控制
+              // Control
               let prefValue = Zotero.Prefs.get(`${config.addonRef}.${arg.prefKey}`)
               ztoolkit.log(`${config.addonRef}.${arg.prefKey}`, prefValue )
               let id = arg.prefKey.replace(/\./g, "-")
@@ -1726,7 +1726,7 @@ export default class Views {
               let control
               switch (arg.type) {
                 case "boolean":
-                  // 创建选框
+                  // Create checkbox
                   control = ztoolkit.UI.createElement(
                     document,
                     "checkbox",
@@ -1740,7 +1740,7 @@ export default class Views {
                         {
                           type: "click",
                           listener: function () {
-                            // 这个要快一点，所以如果当前是true点击后会变成false
+                            // This needs to be faster, so if current is true, clicking will make it false
                             //@ts-ignore
                             prefs[arg.prefKey] = this.getAttribute("checked") != "true"
                           }
@@ -1865,7 +1865,7 @@ export default class Views {
               }
               vbox.appendChild(control)
             }
-            // 对话框
+            // Dialog
             dialog({
               attributes: {
                 buttonlabelaccept: "Set",
@@ -1882,7 +1882,7 @@ export default class Views {
   }
 
   /**
-   * 关系图谱
+   * Relationship graph
    * Obsidian
    */
   public async createGraphView() {
@@ -1892,10 +1892,10 @@ export default class Views {
   }
 
   /**
-   * 注册Prompt命令
+   * Register Prompt commands
    */
   public async registerCommands() {
-    // 注册搜索文库
+    // Register search library
     ztoolkit.Prompt.register([{
       id: "search",
       when: () => {
@@ -2067,7 +2067,7 @@ export default class Views {
         }
       }
     }])
-    // 旧版数据迁移
+    // Legacy data migration
     let getItem = () => {
       let readingItem = Zotero.Items.get(
         Zotero.Reader.getByTabID(Zotero_Tabs.selectedID)?.itemID
@@ -2419,10 +2419,10 @@ export default class Views {
           type Annotation = [Name, Color];
           type Group = [string, Annotation[]];
 
-          // 从prefs初始化
-          // [标注组名称，[[颜色名称, 颜色], [颜色名称, 颜色]]]
+          // Initialize from prefs
+          // [annotation group name, [[color name, color], [color name, color]]]
           let groups: Group[]= JSON.parse(Zotero.Prefs.get(`${config.addonRef}.annotationColorsGroups`) as string)
-          // [[颜色名称, 颜色], [颜色名称, 颜色]]
+          // [[color name, color], [color name, color]]
           // let defaultAnno: Annotation[] = JSON.parse(Zotero.Prefs.get(`${config.addonRef}.annotationColors`) as string)
           let defaultAnno: Annotation[] = [
             ['general.yellow', '#ffd400'],
@@ -2456,14 +2456,14 @@ export default class Views {
             })
           }
           /**
-           * 将colorsGroup渲染到groupContainer
+           * Render colorsGroup to groupContainer
            * @param colorsGroup 
            */
           let timer: Number | undefined
           let updateGroups = () => {
             saveGroups(groups)
             container.querySelectorAll(".command").forEach(e => e.remove())
-            // 已创建的标注颜色
+            // Created annotation colors
             for (let groupIndex = 0; groupIndex < groups.length; groupIndex++) {
               const group = groups[groupIndex]
               ztoolkit.UI.appendElement(
@@ -2497,7 +2497,7 @@ export default class Views {
                           listener: function (event) {
                             event.stopPropagation()
                             event.preventDefault()
-                            // 单击名称变为可输入状态更改名称
+                            // Click name to enter editable state to change name
                             // @ts-ignore
                             const spanNode = this as HTMLSpanElement;
                             const inputNode = spanNode.nextSibling as HTMLInputElement;
@@ -2563,7 +2563,7 @@ export default class Views {
                                 editAnnotations(group)
                               }, 1000)
                             } else if (event.button == 2) {
-                              // 单击右键删除
+                              // Right-click to delete
                               groups.splice(groupIndex, 1)
                               updateGroups()
                             }
@@ -2618,7 +2618,7 @@ export default class Views {
                 container
               )
             }
-            // 新增按钮
+            // Add button
             container.appendChild(ztoolkit.UI.createElement(document, "div", {
               classList: ["command"],
               styles: {
@@ -2635,7 +2635,7 @@ export default class Views {
                 {
                   type: "click",
                   listener: async () => {
-                    // 新建标注颜色
+                    // Create new annotation color
                     groups.push(["Untitled", copy(defaultAnno)])
                     updateGroups()
                     let node = [...container.querySelectorAll(".command")].slice(-2)[0];
@@ -2672,9 +2672,9 @@ export default class Views {
             const isUsed = JSON.stringify(annotations) == Zotero.Prefs.get(`${config.addonRef}.annotationColors`)
             ztoolkit.log(isUsed)
             /**
-             * 根据anno创建ele
-             * @param anno [标注名称, 标注颜色]
-             * @param index 用于删除
+             * Create element based on annotation
+             * @param anno [annotation name, annotation color]
+             * @param index used for deletion
              * @returns 
              */
             let create = (anno: string[], index: number) => {
@@ -2695,7 +2695,7 @@ export default class Views {
                       type: "mouseup",
                       listener: async (event: any) => {
                         if (event.button == 2) {
-                          // 单击右键删除
+                          // Right-click to delete
                           if (annotations.length > 2) {
                             annotations.splice(index, 1)
                             ele.remove()
@@ -2789,7 +2789,7 @@ export default class Views {
             annotations.forEach((anno, index) => {
               container.appendChild(create(anno, index))
             })
-            // 增加一个创建按钮
+            // Add a create button
             const ele = ztoolkit.UI.createElement(document, "div", {
               classList: ["command"],
               styles: {
@@ -2978,7 +2978,7 @@ export default class Views {
   }
 
   /**
-   * 修改PDF标注颜色
+   * Modify PDF annotation color
    */
   public modifyAnnotationColors(reader: _ZoteroReaderInstance) {
     // @ts-ignore
@@ -3018,7 +3018,7 @@ export default class Views {
   }
 
   /**
-   * 监测Item点击
+   * Monitor Item clicks
    */
   public async initItemSelectListener() {
     let getChildrenTarget = (event: any, nodes: any) => {
@@ -3043,7 +3043,7 @@ export default class Views {
     let lastKey: string, lastItemType: string, selectedItemType: string = "", icon: string
     this.filterFunctions.push((items: Zotero.Item[]) => {
       if (selectedItemType.length) {
-        // 去除子条目
+        // Remove sub-items
         let _items = items.filter((item: Zotero.Item) => {
           if (
             item.parentID &&
@@ -3054,7 +3054,7 @@ export default class Views {
         if (_items.length) {
           return _items
         } else {
-          // 自动退出
+          // Auto exit
           new ztoolkit.ProgressWindow("Exit", { closeOtherProgressWindows: true })
             .createLine({
               icon,
@@ -3072,7 +3072,7 @@ export default class Views {
       if (items.length == 1) {
         const item = items[0]
         /**
-         * 在待选择节点上移动
+         * Move on nodes to be selected
          */
         const target = getChildrenTarget(event, (event.target! as HTMLDivElement).childNodes) as HTMLSpanElement
         if (target?.classList.contains("Rating")) {
@@ -3115,14 +3115,14 @@ export default class Views {
         } catch {}
       }
       /**
-       * 2 选中一个条目后再点击触发
+       * 2 Triggered by clicking after selecting an item
        */
       let items = ZoteroPane.getSelectedItems()
       if (items.length == 1) {
         const item = items[0]
         if (lastKey == item.key) {
           /**
-           * 2.1 评级
+           * 2.1 Rating
            */
           if (target?.classList.contains("Rating")) {
             const optionNodes = [...target.querySelectorAll("span.option")] as HTMLScriptElement[]
@@ -3136,7 +3136,7 @@ export default class Views {
             }
           }
           /**
-           * 2.2 点击条目类型icon触发
+           * 2.2 Triggered by clicking item type icon
            */
           if (target?.classList.contains("title")) {
             let span = getChildrenTarget(event, target.childNodes)
@@ -3173,7 +3173,7 @@ export default class Views {
 
   public async initTags() {
     if (!Zotero.Prefs.get(`${config.addonRef}.function.Tags.enable`) as boolean) { return }
-    // 等待加载
+    // Wait for loading
     while (!ZoteroPane.tagSelector) {
       await Zotero.Promise.delay(100)
     }
@@ -3244,10 +3244,10 @@ export default class Views {
                 }
               }
             }
-            // 修复定位bug
+            // Fix positioning bug
             window.setTimeout(async () => {
-              // 随着缩放它会一直闪烁，这个bug，Zotero官方一直没修复
-              // 所以将它替换为border形式，即使不消失也不会太影响观感
+              // It keeps flashing with zoom, this bug has never been fixed by Zotero official
+              // So replace it with border form, even if it does not disappear, it will not affect the appearance too much
               const win = (
                 (await ztoolkit.Reader.getReader() as _ZoteroReaderInstance)._iframeWindow as any
               ).wrappedJSObject
@@ -3264,7 +3264,7 @@ export default class Views {
                 },
               }, win.document.documentElement as any);
             }, 0)
-            // 为tab添加标签
+            // Add tags to tabs
             window.setTimeout(async () => {
               
             })
@@ -3338,15 +3338,15 @@ export default class Views {
                   }
                 }
   
-                // 缓存读取
+                // Cache reading
                 if (key in this.cache) {
                   setText(this.cache[key], true)
                 }
-                // 读取模式
+                // Reading mode
                 const modeKey = `${config.addonRef}.addNumberToCollectionTree.mode`
                 const mode = Number(Zotero.Prefs.get(modeKey) as string)
                 
-                // 悄悄更新
+                // Quietly update
                 let text: string | undefined = undefined
                 if (ref._ObjectType == "Collection") { 
                   let collection = ref;

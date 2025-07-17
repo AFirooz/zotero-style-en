@@ -161,7 +161,7 @@ const field2Info: any = {
   },
   ahci(s: string) {
     let rank = 2
-    let key = "A&HCI 检索"
+    let key = "A&HCI Indexed"
     let value = ""
     return { rank, key, value }
   },
@@ -345,7 +345,7 @@ const field2Info: any = {
   xmu(s: string) {
     let key, value;
     let rank
-    if (s == "XMU一类") {
+    if (s == "XMU First Class") {
       key = s
       value = ""
       rank = 2
