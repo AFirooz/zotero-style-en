@@ -2087,7 +2087,7 @@ export default class Views {
         name: "High-Energy Progress Bar",
         label: "Style",
         when: () => {
-          // 有条目，且条目有阅读时间
+          // Check if item exists and has reading time data
           let item = getItem()
           if (!item) { return false }
           let record = this.storage.get(item, "readingTime")
