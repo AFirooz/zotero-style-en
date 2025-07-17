@@ -19,9 +19,9 @@ You can upload your screenshots [here](https://github.com/MuiseDestiny/zotero-st
 [English Documentation](https://www.notion.so/Zotero-Style-bc2aebbbb6df4b7baa858e376e4fc5be) |
 [Video Tutorial](https://www.bilibili.com/video/BV1ZP411p7ko/?spm_id_from=333.999.0.0)
 ---
-## About Updates
+## About Update
 
-> Please use the official Zotero update method shown in the image below to update. Minor versions will not be released on Github, but you can always get all version updates (major/minor) through the method shown below.
+> Please use the method shown in the image below, the official Zotero update method. Minor versions will not be released on Github, but you can always get all version updates (major/minor) through the method shown below.
 
 
 ![image](https://github.com/user-attachments/assets/87a6737c-4789-4195-a46e-d4b8bbb20b79)
@@ -104,43 +104,43 @@ You can upload your screenshots [here](https://github.com/MuiseDestiny/zotero-st
 
 | Field | Name | Source |
 | --- | --- | --- |
-|ccf|  |China Computer Federation Recommended International Academic Conferences and Journals, Chinese Science and Technology Journals Directory-2019, High-Quality Science and Technology Journals Classification Directory in Computing Field. Dataset ranked from high to low: A(T1), B(T2), C(T3).|
-|swufe| |Southwestern University of Finance and Economics Academic Journal Directory 2018. Dataset ranked from high to low: A+, A, B, C.|
+|ccf| |China Computer Federation Recommended International Academic Conferences and Journals, Chinese Science and Technology Journal Directory-2019, High-Quality Science and Technology Journal Classification Directory in Computing Field. Dataset ranked from high to low: A(T1), B(T2), C(T3).|
+|swufe| |Southwest University of Finance and Economics Academic Journal Directory 2018. Dataset ranked from high to low: A+, A, B, C.|
 |cufe| |Central University of Finance and Economics Journal Directory (2019 Edition). Dataset ranked from high to low: AAA, AA, A.|
-|ssci| |JCR-Partition-Impact Factor-2022(2022.6.28).pdf. Dataset ranked from high to low: Q1, Q2, Q3, Q4.|
-|sci| |JCR-Partition-Impact Factor-2022(2022.6.28).pdf. Dataset ranked from high to low: Q1, Q2, Q3, Q4.|
-|sciif| |JCR-Partition-Impact Factor-2022(2022.6.28).pdf. EasyScholar divides impact factors into 5 levels from 10, 4, 2, 1, 0.|
-|jci| |JCR-Partition-Impact Factor-2022(2022.6.28).pdf. EasyScholar divides JCI index into 4 levels from 3, 1, 0.5, 0.|
-|sciif5| |Since the latest 5-year impact factor data has not been collected yet, the 2021 data is still used. EasyScholar divides 5-year impact factors into 5 levels from 10, 4, 2, 1, 0.|
-|ahci| |JCR-Partition-Impact Factor-2022(2022.6.28).pdf. This dataset has only one level.|
-|fdu| |Fudan University Postgraduate Education Domestic Journal Guide Directory (January 2018 Revision). Dataset ranked from high to low: A, B.|
-|sjtu| |Shanghai Jiao Tong University SCI/SCIE Paper Grade A and Grade B Journal Classification Directory and Other Publications Grade Reference (2018.5). Dataset ranked from high to low: A, B.|
-|xmu| |Xiamen University Humanities and Social Sciences Core Academic Journal Directory (2017). This dataset has only one level: First Class.|
-|cssci| |CSSCI Source Journals, Extended Edition Directory 2021-2022. Dataset ranked from high to low: CSSCI, CSSCI Extended Edition.|
+|ssci| |JCR-Quartile-Impact Factor-2022(2022.6.28).pdf. Dataset ranked from high to low: Q1, Q2, Q3, Q4.|
+|sci| |JCR-Quartile-Impact Factor-2022(2022.6.28).pdf. Dataset ranked from high to low: Q1, Q2, Q3, Q4.|
+|sciif| |JCR-Quartile-Impact Factor-2022(2022.6.28).pdf. easyScholar divides impact factors into 5 levels from 10, 4, 2, 1, 0.|
+|jci| |JCR-Quartile-Impact Factor-2022(2022.6.28).pdf. easyScholar divides JCI index into 4 levels from 3, 1, 0.5, 0.|
+|sciif5| |Since the latest 5-year impact factor data has not been collected yet, 2021 data is still used. easyScholar divides 5-year impact factors into 5 levels from 10, 4, 2, 1, 0.|
+|ahci| |JCR-Quartile-Impact Factor-2022(2022.6.28).pdf. This dataset has only one level.|
+|fdu| |Fudan University Degree and Graduate Education Domestic Journal Guide Directory (Revised January 2018). Dataset ranked from high to low: A, B.|
+|sjtu| |Shanghai Jiao Tong University SCI/SCIE Paper A-level B-level Journal Classification Directory and Other Publication Level Reference (2018.5). Dataset ranked from high to low: A, B.|
+|xmu| |Xiamen University Core Academic Journal Directory for Humanities and Social Sciences (2017). This dataset has only one level: Class I.|
+|cssci| |CSSCI Source Journal and Extended Edition Directory 2021-2022. Dataset ranked from high to low: CSSCI, CSSCI Extended Edition.|
 |ruc| |Renmin University of China Core Journal Directory 2017. Dataset ranked from high to low: A+, A, A-, B.|
 |cscd| |Chinese Science Citation Database Source Journal List (2021-2022). Dataset ranked from high to low: Core Database, Extended Database.|
 |swjtu| |Southwest Jiaotong University Academic Journal Classification Directory (2017 Revised Edition). Dataset ranked from high to low: A++, A+, A, B+, B.|
-|uibe| |University of International Business and Economics Research Award Foreign Core Journal Thematic Classification Directory. Dataset ranked from high to low: A, A-, B.|
-|pku| |Chinese Core Journal Directory Overview (2020 Edition). This dataset has only one level.|
-|xdu| |Notice on the Announcement of Xidian University High-Quality Journal Directory (2021). Dataset ranked from high to low: First Class Contribution, Second Class Contribution.|
-|sdufe| |Shandong University of Finance and Economics Academic Journal Classification Directory. Dataset ranked from high to low: Special Class Journals, A1, A2, B, C.|
-|eii| EI Indexed |CPXSourceList062022.xlsx. This dataset has only one level.|
+|uibe| |University of International Business and Economics Research Reward Foreign Core Journal Special Classification Directory. Dataset ranked from high to low: A, A-, B.|
+|pku| |PKU Chinese Core Journal Catalog (2020 Edition). This dataset has only one level.|
+|xdu| |Notice on Publishing "Xidian University High-Level Journal Directory (2021)". Dataset ranked from high to low: Class I Contribution, Class II Contribution.|
+|sdufe| |Shandong University of Finance and Economics Academic Journal Classification Directory. Dataset ranked from high to low: Special Category Journals, A1, A2, B, C.|
+|eii| EI Index |CPXSourceList062022.xlsx. This dataset has only one level.|
 |nju| |Nanjing University Super First-Class, Discipline Group First-Class, SCI Zone A and Zone B Journal Directory.xlsx. Dataset ranked from high to low: Super First-Class Journals (Discipline Group First-Class Journals), A, B.|
-|zhongguokejihexin| Chinese Science and Technology Core Journals Directory |2021 Edition Chinese Science and Technology Core Journals Directory.pdf. This dataset has only one level.|
-|cqu| |Chongqing University Humanities and Social Sciences, Natural Sciences Journal Classification Summary. Dataset ranked from high to low: A (Authoritative Journals), B (Important Journals), C.|
-|hhu| |Hohai University High-Quality Paper Journal and Academic Conference Directory (Natural Sciences, excluding Computer Science and Technology, Software Engineering). Dataset ranked from high to low: Class A, Class B, Class C.|
+|zhongguokejihexin| China Science and Technology Core Journal Directory |2021 Edition China Science and Technology Core Journal Directory.pdf. This dataset has only one level.|
+|cqu| |Chongqing University Humanities and Social Sciences, Natural Sciences Journal Classification Directory. Dataset ranked from high to low: A (Authoritative Journals), B (Important Journals), C.|
+|hhu| |Hohai University High-Quality Paper Journal and Academic Conference Directory (Natural Sciences, excluding Computer Science and Technology, Software Engineering disciplines). Dataset ranked from high to low: Class A, Class B, Class C.|
 |ajg| |ABS-2021.pdf English approximately 1700 types. Dataset ranked from high to low: 4*, 4, 3, 2, 1|
 |xju| |Xinjiang University 2020 Edition Natural Science, Humanities and Social Science Academic Journal Directory, 2021 Humanities and Social Science Academic Journal Adjustment Directory. Dataset ranked from high to low: Zone 1, Zone 2, Zone 3, Zone 4, Zone 5.|
-|cug| |China University of Geosciences Science and Technology, Humanities and Social Sciences Journal Partition Summary. Dataset ranked from high to low: T1, T2, T3, T4, T5.|
-|fms| | FMS Management Science High-Quality Journal Recommendation List (2022). Dataset ranked from high to low: A(T1), B(T2), C, D.|
-|scu| | Sichuan University - High-Quality Science and Technology Journals and Academic Conference Classification Reference Plan (Trial) - April 2021.xlsx. Dataset ranked from high to low: A, A-, B, C, D, E.|
-|utd24| |Publicly collected from the internet. This dataset has only one level.|
-|ft50| |Publicly collected from the internet. This dataset has only one level.|
-|sciUp| Chinese Academy of Sciences Upgraded Version | WeChat Mini Program: "Chinese Academy of Sciences Literature and Information Partition Center Table Latest December 2022" Dataset ranked from high to low as Zone 1, Zone 2, Zone 3, Zone 4.|
-|sciBase| Chinese Academy of Sciences Basic Version | WeChat Mini Program: "Chinese Academy of Sciences Literature and Information Partition Center Table Latest December 2021" Dataset ranked from high to low as Zone 1, Zone 2, Zone 3, Zone 4.|
-|sciwarn| Chinese Academy of Sciences Warning | "International Journal Warning List (Trial) - 2021.12.31". This dataset has only one level.|
-|cju| | "Yangtze University Natural Science High-Quality Journals (Chinese Journals) Classification Directory (2021 Edition).pdf" Dataset ranked from high to low as T1, T2, T3.|
-|zju| | "Zhejiang University Domestic Academic Journal Classification Directory Guide 2020 Edition.pdf" Dataset ranked from high to low as Domestic First-Class Academic Journals, Domestic First-Class Core Journals.|
+|cug| |China University of Geosciences Science and Technology, Humanities and Social Sciences Journal Zoning Summary. Dataset ranked from high to low: T1, T2, T3, T4, T5.|
+|fms| |FMS Management Science High-Quality Journal Recommendation List (2022). Dataset ranked from high to low: A(T1), B(T2), C, D.|
+|scu| |Sichuan University - High-Quality Science and Technology Journal and Academic Conference Classification Reference Plan (Interim) - April 2021.xlsx. Dataset ranked from high to low: A, A-, B, C, D, E.|
+|utd24| |Public Internet Collection. This dataset has only one level.|
+|ft50| |Public Internet Collection. This dataset has only one level.|
+|sciUp| SCI Upgraded Edition |WeChat Mini Program: "CAS Literature and Information Division Center Table December 2022 Latest" Dataset ranked from high to low Zone 1, Zone 2, Zone 3, Zone 4.|
+|sciBase| SCI Basic Edition |WeChat Mini Program: "CAS Literature and Information Division Center Table December 2021 Latest" Dataset ranked from high to low Zone 1, Zone 2, Zone 3, Zone 4.|
+|sciwarn| SCI Warning |International Journal Warning List (Trial) - 2021.12.31. This dataset has only one level.|
+|cju| |Yangtze University Natural Science High-Quality Journal (Chinese Journal) Classification Directory (2021 Edition).pdf Dataset ranked from high to low T1, T2, T3.|
+|zju| |Zhejiang University Domestic Academic Journal Classification Directory Guide·2020 Edition.pdf Dataset ranked from high to low Domestic First-Class Academic Journals, Domestic First-Class Core Journals.|
 
 If you are using a custom dataset, you must locate the custom field definition of the dataset and fill it in the `Fields` section.
 
@@ -166,7 +166,7 @@ SCI=,
 EI:
 
 ```ini
-EI Indexed=EI, 
+EI检索=EI, 
 ```
 
 Decrease decimal:
@@ -175,10 +175,10 @@ Decrease decimal:
 /^(\d+)\.(\d{1})\d*$/=$1.$2, 
 ```
 
-Chinese Core Journals:
+Chinese PKU Chinese Core:
 
 ```ini
-PKU Chinese Core=PKU Core, 
+北大中文核心=PKU Core, 
 ```
 
 Chinese Academy of Sciences (CAS) warnings:
@@ -187,27 +187,28 @@ Chinese Academy of Sciences (CAS) warnings:
 SCIWARN=🚫, 
 ```
 
-CAS quartiles - Upgraded Version:
+CAS quartiles SCI Upgraded Edition:
 
 ```ini
-/Medicine(\d+) Zone/=Med$1, 
-/Biology(\d+) Zone/=Bio$1, 
-/Agriculture and Forestry(\d+) Zone/=Agr$1, 
-/Environmental Science and Ecology(\d+) Zone/=Env$1, 
-/Chemistry(\d+) Zone/=Che$1, 
-/Engineering and Technology(\d+) Zone/=Eng$1, 
-/Mathematics(\d+) Zone/=Mat$1, 
-/Physics and Astrophysics(\d+) Zone/=Phy$1, 
-/Earth Sciences(\d+) Zone/=Ear$1, 
-/Materials Science(\d+) Zone/=Mat$1, 
-/Computer Science(\d+) Zone/=CS$1, 
-/Economics(\d+) Zone/=Eco$1, 
-/Law(\d+) Zone/=Law$1, 
-/Management(\d+) Zone/=Mgmt$1, 
-/Psychology(\d+) Zone/=Psy$1, 
-/Humanities(\d+) Zone/=Hum$1, 
-/Education(\d+) Zone/=Edu$1, 
-/Comprehensive Journals(\d+) Zone/=Comp$1, 
+# Chinese academic field abbreviations (preserve exact Chinese terms for database matching):
+/医学(\d+)区/=医$1,           # Medicine
+/生物学(\d+)区/=生$1,         # Biology
+/农林科学(\d+)区/=农$1,       # Agricultural and Forestry Sciences
+/环境科学与生态学(\d+)区/=环$1, # Environmental Science and Ecology
+/化学(\d+)区/=化$1,           # Chemistry
+/工程技术(\d+)区/=工$1,       # Engineering Technology
+/数学(\d+)区/=数$1,           # Mathematics
+/物理与天体物理(\d+)区/=物$1, # Physics and Astrophysics
+/地球科学(\d+)区/=地$1,       # Earth Sciences
+/材料科学(\d+)区/=材$1,       # Materials Science
+/计算机科学(\d+)区/=计$1,     # Computer Science
+/经济学(\d+)区/=经$1,         # Economics
+/法学(\d+)区/=法$1,           # Law
+/管理学(\d+)区/=管$1,         # Management
+/心理学(\d+)区/=心$1,         # Psychology
+/人文科学(\d+)区/=人$1,       # Humanities
+/教育学(\d+)区/=教$1,         # Education
+/综合性期刊(\d+)区/=综$1,     # Comprehensive Journals
 ```
 
 </details>
@@ -326,14 +327,14 @@ Two ways display your tags after assigning color and position: (1) you can open 
 
 ## Recommended Links
 
-### Bilibili (Chinese Platform)
+### Bilibili
 - [Zotero Style User Manual](https://www.bilibili.com/video/BV1ss4y1E7sX)
 - [Zotero Style Plugin You Deserve! Relationship Graph Included!](https://www.bilibili.com/video/BV1as4y1a7Gf)
 - [zotero-style - Usage Examples and Color Scheme Collection](https://www.bilibili.com/video/BV1BA411R7hb)
 - [zotero-style Plugin - Tag Title Alignment, Adding High-Energy Progress Bar for Literature!](https://www.bilibili.com/video/BV1PK411o7JN)
 - [Zotero Style - Updates with Fancy Features and a Useful Reference Import](https://www.bilibili.com/video/BV1Z44y1D7nP)
 
-### XiaoHongShu (Chinese Platform)
+### XiaoHongShu
 
 - [Zotero-Style Plugin Download and Basic Usage Tutorial](http://xhslink.com/tlz9So)
 - [Zotero New Plugin Introduction - Zotero Style](http://xhslink.com/PnHlCn)
@@ -363,4 +364,4 @@ Two ways display your tags after assigning color and position: (1) you can open 
 
 ## Sponsor
 
-[Here](https://github.com/MuiseDestiny/zotero-reference#sponsor)
+[Here](https://github.com/MuiseDestiny/zotero-reference#%E8%B5%9E%E5%8A%A9)
